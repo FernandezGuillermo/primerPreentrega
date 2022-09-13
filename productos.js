@@ -9,35 +9,12 @@ class Jean{
         this.talle48 = talle48;
         this.talle50 = talle50;
     }
-    //Metodos
-    inStock40(){
-        if(this.talle40>0){
-            return true;
-        }else{
-            false;
-        }
-    }
-    inStock42(){
-        if(this.talle42>0){
-            return true;
-        }else{
-            false;
-        }
-    }
-
-    inStock44(){
-        if(this.talle44>0){
-            return true;
-        }else{
-            false;
-        }
-    }
 }
 
 //Agrego stock de jeans
 const JeanAlabama = new Jean("Jean Alabama",0,7,3,8,10,5);
-const JeanKansas = new Jean("Jean Kansas",7,20,15,4,8,6);
-const JeanArizona = new Jean("Jean Arizona",15,45,6,8,17,20);
+const JeanKansas = new Jean("Jean Kansas",7,20,15,4,0,0);
+const JeanArizona = new Jean("Jean Arizona",15,45,0,8,17,20);
 
 //Creo array para guardar el stock del jean
 const stockJean = [];
@@ -58,11 +35,6 @@ function consultarDisponilidadJean(){
         console.log(jean);
     }
 }
-
-/* function consultarDisponibilidadTalle(){
-    let talle = parseInt(prompt("Ingrese el talle para ver la disponibilidad"));
-    
-} */
 
 function hayTalle40(){
     let jean = stockJean.filter(jean => jean.talle40 > 0);
@@ -91,5 +63,51 @@ function hayTalle44(){
     }
 }
 
-console.log(JeanAlabama.inStock42());
+function hayTalle46(){
+    let jean = stockJean.filter(jean => jean.talle46 > 0);
+    if(jean === undefined){
+        console.log("No hay disponible en ese talle");
+    }else{
+        console.log(jean);
+    }
+}
+
+function hayTalle48(){
+    let jean = stockJean.filter(jean => jean.talle48 > 0);
+    if(jean === undefined){
+        console.log("No hay disponible en ese talle");
+    }else{
+        console.log(jean);
+    }
+}
+
+function hayTalle50(){
+    let jean = stockJean.filter(jean => jean.talle50 > 0);
+    if(jean === undefined){
+        console.log("No hay disponible en ese talle");
+    }else{
+        console.log(jean);
+    }
+}
+
 /* consultarDisponilidadJean(); */
+
+function hayStock(talle){
+    switch(talle){
+        case 40: hayTalle40();
+            break;
+        case 42: hayTalle42();
+            break;
+        case 44: hayTalle44();
+            break;
+        case 46: hayTalle46();
+            break;
+        case 48: hayTalle48();
+            break;
+        case 50: hayTalle50();
+            break;
+        default: alert("No existe ese talle");
+    } 
+}
+
+hayStock(parseInt(prompt("Que talle necesitas")));
