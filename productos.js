@@ -42,7 +42,7 @@ function consultarDisponilidadJean(){
 function hayTalle40(){
     let cantidad = parseInt(prompt("Que cantidad quiere llevar"));
     let jean = stockJean.filter(jean => jean.talle40 > 0);
-    if(jean === undefined){
+    if(jean === undefined || jean.talle40 < cantidad){
         console.log("No hay disponible en ese talle");
     }else{
         jean.talle40 -= cantidad;
@@ -50,47 +50,52 @@ function hayTalle40(){
 }
 
 function hayTalle42(){
+    let cantidad = parseInt(prompt("Que cantidad quiere llevar"));
     let jean = stockJean.filter(jean => jean.talle42 > 0);
     if(jean === undefined){
         console.log("No hay disponible en ese talle");
     }else{
-        console.log(jean);
+        jean.talle42 -= cantidad;
     }
 }
 
 function hayTalle44(){
+    let cantidad = parseInt(prompt("Que cantidad quiere llevar"));
     let jean = stockJean.filter(jean => jean.talle44 > 0);
     if(jean === undefined){
         console.log("No hay disponible en ese talle");
     }else{
-        console.log(jean);
+        jean.talle44 -= cantidad;
     }
 }
 
 function hayTalle46(){
+    let cantidad = parseInt(prompt("Que cantidad quiere llevar"));
     let jean = stockJean.filter(jean => jean.talle46 > 0);
     if(jean === undefined){
         console.log("No hay disponible en ese talle");
     }else{
-        console.log(jean);
+        jean.talle46 -= cantidad;
     }
 }
 
 function hayTalle48(){
+    let cantidad = parseInt(prompt("Que cantidad quiere llevar"));
     let jean = stockJean.filter(jean => jean.talle48 > 0);
     if(jean === undefined){
         console.log("No hay disponible en ese talle");
     }else{
-        console.log(jean);
+        jean.talle48 -= cantidad;
     }
 }
 
 function hayTalle50(){
+    let cantidad = parseInt(prompt("Que cantidad quiere llevar"));
     let jean = stockJean.filter(jean => jean.talle50 > 0);
     if(jean === undefined){
         console.log("No hay disponible en ese talle");
     }else{
-        console.log(jean);
+        jean.talle50 -= cantidad;
     }
 }
 
@@ -151,6 +156,4 @@ function menu(){
     opcion = parseInt(prompt("Opciones: 1-Consultar disponibilidad modelo Jean 2-Consultar talle modelo de jean 3-Pagar"));
 }
 
-/* menu(); */
-
-elegirProducto();
+menu();
