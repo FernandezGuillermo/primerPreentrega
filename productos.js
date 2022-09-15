@@ -39,9 +39,9 @@ function consultarDisponilidadJean(){
     }
 }
 
-function hayTalle40(){
+function hayTalle40(jean){
     let cantidad = parseInt(prompt("Que cantidad quiere llevar"));
-    let jean = stockJean.filter(jean => jean.talle40 > 0);
+    jean = stockJean.filter(jean => jean.talle40 > 0);
     if(jean === undefined || jean.talle40 < cantidad){
         console.log("No hay disponible en ese talle");
     }else{
@@ -132,6 +132,7 @@ function elegirProducto(){
     let jean = stockJean.find(jean => jean.nombre === nombre);
     let precio = jean.precio * cantidad;
     alert (cantidad + " " + jean.nombre + " saldria " + "$" + precio);
+    return jean;
 }
 
 function pagar(){
@@ -146,7 +147,7 @@ function menu(){
     switch(opcion){
         case 1: consultarDisponilidadJean();
         break;
-        case 2: hayStock();
+        case 2: hayStock(elegirProducto());
         break;
         case 3: pagar(); 
         break;
